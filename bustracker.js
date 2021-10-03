@@ -12,6 +12,8 @@ const busStops = [
     [-71.117585, 42.373016],
     [-71.118625, 42.374863],
   ];
+
+busStops.reverse();
   
 mapboxgl.accessToken = 'pk.eyJ1IjoiY2FybWVuYzMzMyIsImEiOiJja3RrYm15Z3cwbmFhMnBxenVzM3VvdnBwIn0.eRv1drcqrCxkkaXioDDvEg';
 
@@ -22,7 +24,9 @@ let map = new mapboxgl.Map({
     zoom: 14
 });
 
-let marker = new mapboxgl.Marker().setLngLat([-71.092761, 42.357575]).addTo(map);
+let marker = new mapboxgl.Marker();
+marker.setLngLat([-71.092761, 42.357575])
+marker.addTo(map);
 
 let counter = 0;
 function move(){
